@@ -1,0 +1,972 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0D2329">
+<title>Jam Vintage Pilihan – Saka Timepiece</title>
+<meta name="description" content="Saka Timepiece — koleksi jam tangan vintage yang dikurasi dengan teliti. Setiap jam diperiksa keasliannya dan bergaransi.">
+<meta property="og:title" content="Saka Timepiece — Watch Collections">
+<meta property="og:description" content="Koleksi jam tangan vintage pilihan, diperiksa keasliannya dan bergaransi.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0D2329;          /* biru tua dari PDF */
+  --bg-2:#112C33;        /* permukaan sedikit lebih terang */
+  --bg-3:#16363E;
+  --line:rgba(255,255,255,.12);
+  --line-strong:rgba(255,255,255,.22);
+  --text:#FFFFFF;
+  --text-2:#B7C5C8;
+  --text-3:#7F9499;
+  --gold:#E7A65B;        /* emas dari PDF */
+  --gold-hover:#D4924A;
+  --lime:#D1FF5D;        /* hijau lime dari PDF */
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --gutter:16px;
+  --header-h:60px;
+  --safe-t:env(safe-area-inset-top,0px);
+  --safe-b:env(safe-area-inset-bottom,0px);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body.locked{overflow:hidden;touch-action:none}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--gutter)}
+.serif{font-family:var(--serif)}
+.eyebrow{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--lime)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 26px;border-radius:0;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:background .25s var(--ease),color .25s var(--ease),border-color .25s var(--ease)}
+.btn--gold{background:var(--gold);color:var(--bg)}
+.btn--gold:hover{background:var(--gold-hover)}
+.btn--outline{border:1px solid var(--gold);color:var(--gold)}
+.btn--outline:hover{background:var(--gold);color:var(--bg)}
+.btn--block{width:100%}
+.link-arrow{display:inline-flex;gap:8px;align-items:center;color:var(--gold);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.icon{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ========== HEADER ========== */
+.header{position:sticky;top:0;z-index:40;background:rgba(13,35,41,.94);backdrop-filter:saturate(140%) blur(10px);-webkit-backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line);padding-top:var(--safe-t)}
+.header__bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:var(--header-h)}
+.header__side{display:flex;align-items:center;gap:2px}
+.header__side--right{justify-content:flex-end}
+.icon-btn{position:relative;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;transition:background .2s}
+.icon-btn:hover{background:rgba(255,255,255,.06)}
+.cart-count{position:absolute;top:6px;right:4px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--gold);color:var(--bg);font-size:10px;font-weight:700;line-height:17px;text-align:center}
+.cart-count[hidden]{display:none}
+.logo{display:flex;align-items:center;gap:9px;white-space:nowrap}
+.logo img{height:30px;width:auto}
+.logo__name{font-family:var(--serif);font-size:20px;font-weight:500;letter-spacing:.01em;font-variant:small-caps}
+.header__nav{display:none}
+@media (min-width:1024px){
+  :root{--header-h:76px;--gutter:40px}
+  .header__nav{display:flex;justify-content:center;gap:30px;padding-bottom:14px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+  .header__nav a{color:var(--text-2);transition:color .2s}
+  .header__nav a:hover,.header__nav a[aria-current]{color:var(--gold)}
+  .hide-desktop{display:none!important}
+  .logo img{height:38px}.logo__name{font-size:26px}
+}
+@media (max-width:1023px){.hide-mobile{display:none!important}}
+
+/* search popdown */
+.search{position:absolute;left:0;right:0;top:100%;background:var(--bg-2);border-bottom:1px solid var(--line);padding:14px var(--gutter);transform:translateY(-8px);opacity:0;visibility:hidden;transition:.25s var(--ease)}
+.search.is-open{transform:none;opacity:1;visibility:visible}
+.search__row{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line-strong);padding-bottom:6px}
+.search input{flex:1;min-width:0;background:none;border:0;outline:0;font-size:16px;height:40px}
+.search input::placeholder{color:var(--text-3)}
+.search__hint{margin:10px 0 0;font-size:13px;color:var(--text-3)}
+
+/* ========== DRAWERS ========== */
+.scrim{position:fixed;inset:0;z-index:60;background:rgba(3,12,15,.62);opacity:0;visibility:hidden;transition:.3s var(--ease)}
+.scrim.is-open{opacity:1;visibility:visible}
+.drawer{position:fixed;top:0;bottom:0;z-index:70;width:min(420px,88vw);background:var(--bg-2);display:flex;flex-direction:column;transition:transform .38s var(--ease);padding-top:var(--safe-t);padding-bottom:var(--safe-b)}
+.drawer--left{left:0;transform:translateX(-102%)}
+.drawer--right{right:0;transform:translateX(102%)}
+.drawer.is-open{transform:none}
+.drawer__head{display:flex;align-items:center;justify-content:space-between;min-height:62px;padding:0 8px 0 var(--gutter);border-bottom:1px solid var(--line)}
+.drawer__title{font-family:var(--serif);font-size:22px;font-weight:500;margin:0}
+.drawer__body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.drawer__foot{border-top:1px solid var(--line);padding:16px var(--gutter)}
+
+/* menu */
+.menu{list-style:none;margin:0;padding:8px 0}
+.menu a{display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 var(--gutter);font-family:var(--serif);font-size:22px;border-bottom:1px solid var(--line)}
+.menu a span{font-family:var(--sans);font-size:11px;letter-spacing:.18em;color:var(--lime);text-transform:uppercase}
+.menu-social{display:flex;gap:18px;padding:22px var(--gutter);font-size:13px;color:var(--text-2);letter-spacing:.08em}
+
+/* cart */
+.ship{padding:16px var(--gutter);border-bottom:1px solid var(--line)}
+.ship p{margin:0 0 10px;font-size:14px;color:var(--text-2)}
+.ship strong{color:var(--text);font-weight:600}
+.ship__bar{height:4px;background:rgba(255,255,255,.1);border-radius:2px;overflow:hidden}
+.ship__fill{height:100%;width:0;background:var(--lime);transition:width .5s var(--ease)}
+.cart-items{list-style:none;margin:0;padding:0}
+.cart-item{display:grid;grid-template-columns:72px 1fr auto;gap:14px;padding:16px var(--gutter);border-bottom:1px solid var(--line);align-items:center}
+.cart-item__img{width:72px;height:72px;background:var(--bg-3)}
+.cart-item__name{font-size:14px;line-height:1.35;margin:0 0 4px}
+.cart-item__price{font-size:13px;color:var(--text-2)}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line-strong);margin-top:8px}
+.qty button{width:32px;height:32px;display:grid;place-items:center}
+.qty span{min-width:26px;text-align:center;font-size:13px}
+.remove{font-size:12px;color:var(--text-3);text-decoration:underline;align-self:start}
+.cart-empty{padding:40px var(--gutter);text-align:center;color:var(--text-2)}
+.cart-empty h3{font-family:var(--serif);font-weight:500;font-size:24px;color:var(--text);margin:0 0 8px}
+.upsell{padding:18px var(--gutter)}
+.upsell h4{margin:0 0 12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-2);font-weight:500}
+.upsell__item{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}
+.upsell__item .thumb{width:56px;height:56px;background:var(--bg-3)}
+.upsell__item p{margin:0;font-size:13px;line-height:1.35}
+.upsell__item small{color:var(--text-2)}
+.add-mini{border:1px solid var(--gold);color:var(--gold);min-height:34px;padding:0 14px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.add-mini:hover{background:var(--gold);color:var(--bg)}
+.subtotal{display:flex;justify-content:space-between;font-size:15px;margin-bottom:6px}
+.foot-note{font-size:12px;color:var(--text-3);margin:0 0 14px}
+
+/* filter drawer */
+.fgroup{border-bottom:1px solid var(--line)}
+.fgroup summary{list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:56px;padding:0 var(--gutter);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+.fgroup summary::-webkit-details-marker{display:none}
+.fgroup[open] summary .chev{transform:rotate(180deg)}
+.chev{transition:transform .25s}
+.fgroup ul{list-style:none;margin:0;padding:0 var(--gutter) 14px}
+.check{display:flex;align-items:center;gap:12px;min-height:40px;font-size:15px;color:var(--text-2);cursor:pointer}
+.check input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1px solid var(--line-strong);margin:0;display:grid;place-items:center;flex:none}
+.check input:checked{background:var(--gold);border-color:var(--gold)}
+.check input:checked::after{content:"";width:9px;height:5px;border:2px solid var(--bg);border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.check input:checked + span{color:var(--text)}
+.check em{font-style:normal;color:var(--text-3);font-size:13px;margin-left:auto}
+.filter-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* ========== COLLECTION HERO ========== */
+.hero{padding:34px 0 24px;text-align:center;border-bottom:1px solid var(--line)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,9vw,58px);line-height:1.08;margin:10px 0 12px;letter-spacing:-.005em}
+.hero p{max-width:520px;margin:0 auto 20px;color:var(--text-2)}
+.hero__sub{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
+.drop-tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
+.drop-tag i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 4px rgba(209,255,93,.15)}
+
+/* toolbar */
+.toolbar{position:sticky;top:calc(var(--header-h) + var(--safe-t));z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.toolbar__in{display:flex;align-items:center;justify-content:space-between;height:52px;gap:12px}
+.tool-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.tool-btn .badge-n{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--lime);color:var(--bg);font-size:10px}
+.badge-n[hidden]{display:none!important}
+.result-count{font-size:12px;color:var(--text-3);letter-spacing:.06em}
+.sort{position:relative}
+.sort select{position:absolute;inset:0;opacity:0;font-size:16px;cursor:pointer}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:12px 0 0}
+.chip{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;border:1px solid var(--line-strong);font-size:12px;color:var(--text-2)}
+.chip:hover{border-color:var(--gold);color:var(--gold)}
+.chips:empty{display:none}
+
+/* ========== GRID ========== */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 10px;padding:18px 0 40px}
+@media (min-width:768px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 20px}}
+@media (min-width:1200px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{position:relative;text-align:center}
+.card__media{position:relative;aspect-ratio:1/1;background:radial-gradient(120% 90% at 50% 35%,#1D434C 0%,#122E35 55%,#0F272D 100%);overflow:hidden}
+.card__slider{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none}
+.card__slider::-webkit-scrollbar{display:none}
+.card__slide{flex:0 0 100%;height:100%;scroll-snap-align:center;display:grid;place-items:center}
+.card__slide svg{width:78%;height:auto;transition:transform .6s var(--ease)}
+.card__dots{position:absolute;left:0;right:0;bottom:8px;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.card__dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.35);transition:background .2s}
+.card__dots i.on{background:var(--text)}
+@media (hover:hover){
+  .card__dots{display:none}
+  .card__slider{overflow:hidden}
+  .card:hover .card__slider{transform:none}
+  .card__slide:nth-child(2){position:absolute;inset:0;opacity:0;transition:opacity .45s var(--ease)}
+  .card:hover .card__slide:nth-child(2){opacity:1}
+  .card:hover .card__slide:first-child svg{transform:scale(1.04)}
+}
+.badge{position:absolute;top:8px;left:8px;z-index:2;padding:3px 8px;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;background:var(--lime);color:var(--bg)}
+.badge--sold{background:rgba(255,255,255,.88);color:var(--bg)}
+.wish{position:absolute;top:2px;right:2px;z-index:2;width:44px;height:44px;display:grid;place-items:center;color:var(--text)}
+.wish svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.5;transition:fill .2s,stroke .2s,transform .2s}
+.wish[aria-pressed="true"] svg{fill:var(--gold);stroke:var(--gold);transform:scale(1.08)}
+.card__info{padding:12px 4px 0}
+.card__title{font-size:14px;line-height:1.38;margin:0 0 5px;font-weight:500}
+.card__price{font-size:13px;color:var(--text-2);letter-spacing:.02em}
+.card.is-sold .card__price{text-decoration:line-through;color:var(--text-3)}
+.card a.card__link{position:absolute;inset:0;z-index:1}
+.empty-state{grid-column:1/-1;text-align:center;padding:40px 0;color:var(--text-2)}
+
+/* ========== SECTIONS ========== */
+.section{padding:56px 0;border-top:1px solid var(--line)}
+.section h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,7vw,42px);line-height:1.15;margin:8px 0 14px}
+.section p{color:var(--text-2)}
+.center{text-align:center}
+.trust{display:grid;gap:28px}
+@media (min-width:768px){.trust{grid-template-columns:repeat(3,1fr)}}
+.trust__item{text-align:center;padding:0 10px}
+.trust__item svg{width:34px;height:34px;margin:0 auto 14px;stroke:var(--gold);fill:none;stroke-width:1.2}
+.trust__item h3{font-family:var(--serif);font-weight:500;font-size:21px;margin:0 0 6px}
+.trust__item p{margin:0;font-size:14px}
+
+.missed{background:var(--bg-2);text-align:center}
+.missed .btn{margin-top:8px}
+
+.straps{display:grid;gap:0;background:var(--bg-2)}
+@media (min-width:768px){.straps{grid-template-columns:1fr 1fr}}
+.straps__img{aspect-ratio:4/3;background:linear-gradient(160deg,#1A3D45,#0F262C);display:grid;place-items:center;overflow:hidden}
+.straps__img svg{width:86%}
+.straps__txt{padding:32px var(--gutter) 40px;display:flex;flex-direction:column;justify-content:center}
+@media (min-width:768px){.straps__txt{padding:48px}}
+
+.guide{display:grid;gap:0}
+.acc{border-bottom:1px solid var(--line)}
+.acc:first-child{border-top:1px solid var(--line)}
+.acc summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:60px;cursor:pointer;font-family:var(--serif);font-size:20px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary .plus{position:relative;width:14px;height:14px;flex:none}
+.acc summary .plus::before,.acc summary .plus::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:var(--gold);transition:transform .25s}
+.acc summary .plus::after{transform:rotate(90deg)}
+.acc[open] summary .plus::after{transform:rotate(0)}
+.acc p{margin:0 0 20px;font-size:14.5px}
+
+.reasons{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:0;counter-reset:r}
+.reasons li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:18px 0;border-top:1px solid var(--line);counter-increment:r}
+.reasons li::before{content:"0" counter(r);font-family:var(--serif);font-size:22px;color:var(--gold)}
+.reasons h3{margin:0 0 4px;font-size:15px;font-weight:600}
+.reasons p{margin:0;font-size:14px}
+@media (min-width:1024px){.reasons{grid-template-columns:repeat(5,1fr);gap:24px}.reasons li{grid-template-columns:1fr}}
+
+.split{display:grid;gap:22px}
+@media (min-width:900px){.split{grid-template-columns:1fr 1fr;gap:56px;align-items:center}}
+.quote-box{border:1px solid var(--line-strong);padding:24px}
+.quote-box h3{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 8px}
+.quote-box p{margin:0;font-size:14.5px}
+
+.newsletter{background:var(--bg-2);text-align:center}
+.nl-form{display:flex;max-width:460px;margin:20px auto 0;border:1px solid var(--line-strong)}
+.nl-form input{flex:1;min-width:0;background:none;border:0;outline:0;padding:0 16px;font-size:16px;height:52px}
+.nl-form input::placeholder{color:var(--text-3)}
+.nl-form button{padding:0 18px;background:var(--gold);color:var(--bg);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+.nl-msg{min-height:22px;margin:12px 0 0;font-size:13px;color:var(--lime)}
+
+/* footer */
+.footer{border-top:1px solid var(--line);padding:46px 0 calc(28px + var(--safe-b))}
+.footer__brand{display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px;margin-bottom:30px}
+.footer__brand img{height:54px;width:auto}
+.footer__brand .logo__name{font-size:26px}
+.footer__brand .eyebrow{font-size:10px;letter-spacing:.32em}
+.footer__cols{display:grid;grid-template-columns:1fr 1fr;gap:26px 16px}
+@media (min-width:900px){.footer__cols{grid-template-columns:repeat(4,1fr)}}
+.footer h4{margin:0 0 12px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--text-3);font-weight:500}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer li a{display:inline-block;padding:6px 0;font-size:14px;color:var(--text-2)}
+.footer li a:hover{color:var(--gold)}
+.pay{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:34px 0 18px}
+.pay span{border:1px solid var(--line-strong);padding:4px 9px;font-size:10.5px;letter-spacing:.08em;color:var(--text-2);text-transform:uppercase}
+.legal{text-align:center;font-size:12px;color:var(--text-3)}
+
+/* quick view sheet */
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:80;max-height:92dvh;background:var(--bg-2);transform:translateY(102%);transition:transform .4s var(--ease);display:flex;flex-direction:column;padding-bottom:var(--safe-b);border-top:1px solid var(--line-strong)}
+.sheet.is-open{transform:none}
+@media (min-width:900px){.sheet{left:50%;right:auto;bottom:auto;top:50%;width:min(940px,92vw);max-height:86vh;transform:translate(-50%,-46%);opacity:0;visibility:hidden;transition:.35s var(--ease)}.sheet.is-open{transform:translate(-50%,-50%);opacity:1;visibility:visible}}
+.sheet__grab{width:40px;height:4px;border-radius:2px;background:var(--line-strong);margin:10px auto 0}
+.sheet__close{position:absolute;top:6px;right:6px;z-index:3}
+.sheet__body{overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.qv{display:grid}
+@media (min-width:900px){.qv{grid-template-columns:1fr 1fr}.sheet__grab{display:none}}
+.qv__media{aspect-ratio:1/1;background:radial-gradient(120% 90% at 50% 35%,#1D434C 0%,#122E35 55%,#0F272D 100%);display:grid;place-items:center}
+.qv__media svg{width:72%}
+.qv__info{padding:22px var(--gutter) 26px}
+.qv__info h2{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.15;margin:6px 0 8px}
+.qv__price{font-size:18px;margin:0 0 18px}
+.specs{width:100%;border-collapse:collapse;margin:0 0 20px;font-size:14px}
+.specs th,.specs td{text-align:left;padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.specs th{color:var(--text-3);font-weight:400;width:42%}
+.qv__actions{display:grid;gap:10px}
+.qv__note{font-size:12.5px;color:var(--text-3);margin:14px 0 0}
+
+/* toast */
+.toast{position:fixed;left:50%;top:calc(var(--safe-t) + 72px);z-index:90;transform:translate(-50%,-12px);opacity:0;background:var(--text);color:var(--bg);padding:12px 18px;font-size:13px;font-weight:500;transition:.3s var(--ease);pointer-events:none;max-width:calc(100vw - 32px);text-align:center}
+.toast.show{transform:translate(-50%,0);opacity:1}
+
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header" id="top">
+  <div class="wrap header__bar">
+    <div class="header__side">
+      <button class="icon-btn" data-open="menu" aria-label="Buka menu" aria-controls="menu-drawer">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+      <button class="icon-btn" id="search-toggle" aria-label="Cari" aria-expanded="false" aria-controls="search">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      </button>
+    </div>
+    <a href="#top" class="logo" aria-label="Saka Timepiece — beranda">
+      <img src="assets/hourglass.png" alt="" width="24" height="30">
+      <span class="logo__name">Saka Timepiece</span>
+    </a>
+    <div class="header__side header__side--right">
+      <a href="#" class="icon-btn hide-mobile" aria-label="Akun">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>
+      </a>
+      <button class="icon-btn" id="wish-toggle" aria-label="Wishlist" title="Tampilkan wishlist">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-8.6C1.3 8.5 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3h3c.8-1.2 2.1-2.3 4.1-2.3C21 5 22.7 8.5 21.2 11.4 19 15.6 12 20 12 20Z" transform="translate(0 -1)"/></svg>
+        <span class="cart-count" id="wish-count" hidden>0</span>
+      </button>
+      <button class="icon-btn" data-open="cart" aria-label="Keranjang" aria-controls="cart-drawer">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-count" id="cart-count" hidden>0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="header__nav wrap" aria-label="Menu utama">
+    <a href="#koleksi" aria-current="page">Koleksi Jam</a>
+    <a href="#tali-jam">Tali Jam</a>
+    <a href="#jual">Jual Jam Anda</a>
+    <a href="#panduan">Panduan</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#terjual">Terjual</a>
+  </nav>
+  <div class="search" id="search" role="search">
+    <div class="search__row">
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" class="visually-hidden">Cari jam</label>
+      <input id="q" type="search" placeholder="Cari merek, model, atau tahun" autocomplete="off" enterkeyhint="search">
+      <button class="icon-btn" id="search-close" aria-label="Tutup pencarian"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </div>
+    <p class="search__hint" id="search-hint">Ketik untuk menyaring koleksi secara langsung.</p>
+  </div>
+</header>
+
+<main>
+  <!-- ===== COLLECTION HERO ===== -->
+  <section class="hero" id="koleksi">
+    <div class="wrap">
+      <p class="eyebrow">Watch Collections</p>
+      <h1>Jam Vintage</h1>
+      <p>Koleksi baru rilis setiap Kamis. Daftar email untuk jadi yang pertama tahu.</p>
+      <div class="hero__sub">
+        <a href="#newsletter" class="btn btn--outline">Daftar</a>
+        <span class="drop-tag"><i></i>Rilis berikutnya: <b id="next-drop" style="font-weight:600;color:var(--text)">Kamis</b></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TOOLBAR ===== -->
+  <div class="toolbar">
+    <div class="wrap toolbar__in">
+      <button class="tool-btn" data-open="filter" aria-controls="filter-drawer">
+        <svg class="icon" viewBox="0 0 24 24" style="width:18px;height:18px"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg>
+        Filter <span class="badge-n" id="filter-n" hidden>0</span>
+      </button>
+      <span class="result-count" id="result-count" aria-live="polite"></span>
+      <label class="tool-btn sort">
+        <span id="sort-label">Urutkan</span>
+        <svg class="icon chev" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m6 9 6 6 6-6"/></svg>
+        <select id="sort" aria-label="Urutkan produk">
+          <option value="latest">Terbaru</option>
+          <option value="price-desc">Harga, tinggi ke rendah</option>
+          <option value="price-asc">Harga, rendah ke tinggi</option>
+          <option value="year-asc">Tahun, terlama</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+  </div>
+
+  <!-- ===== TRUST ===== -->
+  <section class="section">
+    <div class="wrap trust">
+      <div class="trust__item">
+        <svg viewBox="0 0 32 32"><path d="M16 3 5 7v8c0 7 4.7 12 11 14 6.3-2 11-7 11-14V7L16 3Z"/><path d="m11 16 3.5 3.5L21 13"/></svg>
+        <h3>100% Asli Terverifikasi</h3>
+        <p>Setiap jam diperiksa keasliannya oleh tim kami sebelum ditawarkan.</p>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l4.5 3"/></svg>
+        <h3>Garansi Mekanis</h3>
+        <p>Semua jam dilengkapi garansi mekanis agar Anda tenang memakainya.</p>
+      </div>
+      <div class="trust__item">
+        <svg viewBox="0 0 32 32"><path d="M3 9h17v13H3zM20 13h5l4 4v5h-9z"/><circle cx="9" cy="24" r="2.5"/><circle cx="24" cy="24" r="2.5"/></svg>
+        <h3>Pengiriman Berasuransi</h3>
+        <p>Dikirim dengan asuransi penuh ke seluruh Indonesia dan luar negeri.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLD ARCHIVE ===== -->
+  <section class="section missed" id="terjual">
+    <div class="wrap">
+      <p class="eyebrow">Arsip</p>
+      <h2>Ada jam yang terlewat?</h2>
+      <p>Lihat jam-jam yang sudah menemukan pemilik barunya.</p>
+      <button class="btn btn--outline" id="show-sold">Lihat Arsip Jam Terjual</button>
+    </div>
+  </section>
+
+  <!-- ===== STRAPS ===== -->
+  <section class="straps" id="tali-jam">
+    <div class="straps__img" aria-hidden="true">
+      <svg viewBox="0 0 400 300">
+        <defs><linearGradient id="lthr" x1="0" x2="1"><stop offset="0" stop-color="#7A4A26"/><stop offset=".5" stop-color="#9A6234"/><stop offset="1" stop-color="#6B3F20"/></linearGradient>
+        <linearGradient id="lthr2" x1="0" x2="1"><stop offset="0" stop-color="#1E1B19"/><stop offset=".5" stop-color="#3A3330"/><stop offset="1" stop-color="#191614"/></linearGradient></defs>
+        <g transform="rotate(-14 200 150)">
+          <rect x="40" y="96" width="320" height="38" rx="6" fill="url(#lthr)"/>
+          <g stroke="#E7A65B" stroke-width="1.2" stroke-dasharray="4 4" fill="none" opacity=".75"><path d="M48 101H352M48 129H352"/></g>
+          <rect x="300" y="92" width="30" height="46" rx="4" fill="none" stroke="#E7A65B" stroke-width="3"/>
+          <g fill="#0D2329" opacity=".55"><circle cx="90" cy="115" r="3"/><circle cx="112" cy="115" r="3"/><circle cx="134" cy="115" r="3"/></g>
+        </g>
+        <g transform="rotate(-14 200 200)">
+          <rect x="60" y="170" width="300" height="34" rx="6" fill="url(#lthr2)"/>
+          <g stroke="#D1FF5D" stroke-width="1" stroke-dasharray="4 4" fill="none" opacity=".45"><path d="M68 175H352M68 199H352"/></g>
+          <rect x="72" y="166" width="26" height="42" rx="4" fill="none" stroke="#B7C5C8" stroke-width="3"/>
+        </g>
+      </svg>
+    </div>
+    <div class="straps__txt">
+      <p class="eyebrow">Tali Jam Kulit</p>
+      <h2 class="serif" style="font-weight:500;font-size:clamp(28px,7vw,40px);margin:8px 0 10px">Terinspirasi vintage.<br>Dijahit tangan.</h2>
+      <p style="color:var(--text-2);margin:0 0 22px">Lengkapi jam Anda dengan tali kulit sapi, motif aligator, atau motif kadal. Tersedia ukuran 18–20 mm.</p>
+      <div><button class="btn btn--gold" data-open="cart">Lihat Tali Jam</button></div>
+    </div>
+  </section>
+
+  <!-- ===== BRAND GUIDE ===== -->
+  <section class="section" id="panduan">
+    <div class="wrap" style="max-width:860px">
+      <p class="eyebrow center">Panduan Merek</p>
+      <h2 class="center">Jam Vintage di Saka Timepiece</h2>
+      <p class="center" style="margin:0 auto 28px;max-width:640px">Temukan jam klasik untuk pria dan wanita dari merek-merek ternama. Kami menghadirkan dress watch, jam kasual, dan kronograf dengan mesin otomatis, manual, maupun quartz.</p>
+      <div class="guide" id="guide"></div>
+    </div>
+  </section>
+
+  <!-- ===== REASONS ===== -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Mengapa Vintage</p>
+      <h2>5 Alasan Membeli Jam Vintage</h2>
+      <ol class="reasons">
+        <li><div><h3>Langka dan bernilai</h3><p>Produksi terbatas dan model yang sudah tidak dibuat lagi menjadikannya eksklusif.</p></div></li>
+        <li><div><h3>Warisan di pergelangan</h3><p>Setiap jam membawa cerita dari zamannya.</p></div></li>
+        <li><div><h3>Tak lekang waktu</h3><p>Desain ikonik yang tetap relevan dan mudah dipadukan.</p></div></li>
+        <li><div><h3>Elegan dalam kesederhanaan</h3><p>Tidak mencolok, tapi dikenali oleh mereka yang paham.</p></div></li>
+        <li><div><h3>Desain orisinal</h3><p>Bentuk asli yang membentuk sejarah pembuatan jam.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===== VINTAGE VS ANTIK + SELL ===== -->
+  <section class="section" id="jual">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Tanya Jawab</p>
+        <h2>Apa beda jam vintage dan jam antik?</h2>
+        <p>Jam vintage umumnya berusia 20–30 tahun dan membawa gaya dekade sebelumnya, sedangkan jam antik secara ketat didefinisikan berusia lebih dari 100 tahun. Kelangkaan, merek, dan kondisi sering lebih menentukan nilai sebuah jam daripada usianya.</p>
+      </div>
+      <div class="quote-box">
+        <p class="eyebrow">Jual Jam Anda</p>
+        <h3>Ingin menjual jam vintage?</h3>
+        <p style="margin-bottom:18px">Kami menawarkan proses akuisisi yang profesional dan terjaga kerahasiaannya untuk jam vintage berkualitas.</p>
+        <a class="link-arrow" href="#" id="sell-link">Ajukan Penawaran →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER ===== -->
+  <section class="section newsletter" id="newsletter">
+    <div class="wrap">
+      <p class="eyebrow">Rilis Kamis</p>
+      <h2>Jangan lewatkan satu jam pun</h2>
+      <p style="max-width:520px;margin:0 auto">Akses lebih awal, panduan jam vintage, dan cerita di balik setiap koleksi.</p>
+      <form class="nl-form" id="nl-form" novalidate>
+        <label for="nl-email" class="visually-hidden">Email</label>
+        <input id="nl-email" type="email" inputmode="email" autocomplete="email" placeholder="Alamat email Anda" required>
+        <button type="submit">Daftar</button>
+      </form>
+      <p class="nl-msg" id="nl-msg" role="status"></p>
+    </div>
+  </section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer" id="tentang">
+  <div class="wrap">
+    <div class="footer__brand">
+      <img src="assets/hourglass.png" alt="" width="44" height="54">
+      <span class="logo__name">Saka Timepiece</span>
+      <span class="eyebrow">Watch Collections</span>
+    </div>
+    <div class="footer__cols">
+      <div><h4>Belanja</h4><ul><li><a href="#koleksi">Koleksi Jam</a></li><li><a href="#tali-jam">Tali Jam</a></li><li><a href="#terjual">Jam Terjual</a></li><li><a href="#jual">Jual Jam Anda</a></li></ul></div>
+      <div><h4>Layanan</h4><ul><li><a href="#">FAQ</a></li><li><a href="#">Pengiriman</a></li><li><a href="#">Pengembalian</a></li><li><a href="#">Perlindungan Pembeli</a></li></ul></div>
+      <div><h4>Tentang</h4><ul><li><a href="#">Cerita Kami</a></li><li><a href="#panduan">Panduan Merek</a></li><li><a href="#">Kontak</a></li></ul></div>
+      <div><h4>Ikuti Kami</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li><li><a href="#">WhatsApp</a></li></ul></div>
+    </div>
+    <div class="pay" aria-label="Metode pembayaran">
+      <span>Transfer Bank</span><span>Virtual Account</span><span>QRIS</span><span>E-Wallet</span><span>Kartu Kredit</span><span>PayPal</span>
+    </div>
+    <p class="legal">© <span id="yr"></span> Saka Timepiece. Situs demo — produk dan harga bersifat contoh.</p>
+  </div>
+</footer>
+
+<!-- ===== OVERLAYS ===== -->
+<div class="scrim" id="scrim"></div>
+
+<aside class="drawer drawer--left" id="menu-drawer" aria-label="Menu" aria-hidden="true">
+  <div class="drawer__head">
+    <a href="#top" class="logo" data-close><img src="assets/hourglass.png" alt="" width="20" height="26"><span class="logo__name" style="font-size:18px">Saka Timepiece</span></a>
+    <button class="icon-btn" data-close aria-label="Tutup menu"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <ul class="menu">
+      <li><a href="#koleksi" data-close>Koleksi Jam <span>Baru</span></a></li>
+      <li><a href="#tali-jam" data-close>Tali Jam</a></li>
+      <li><a href="#jual" data-close>Jual Jam Anda</a></li>
+      <li><a href="#newsletter" data-close>Daftar Email</a></li>
+      <li><a href="#panduan" data-close>Panduan Merek</a></li>
+      <li><a href="#tentang" data-close>Tentang</a></li>
+      <li><a href="#terjual" data-close>Terjual</a></li>
+    </ul>
+    <div class="menu-social"><a href="#">Instagram</a><a href="#">TikTok</a><a href="#">YouTube</a></div>
+  </div>
+  <div class="drawer__foot"><a href="#" class="btn btn--outline btn--block">Masuk / Daftar Akun</a></div>
+</aside>
+
+<aside class="drawer drawer--right" id="filter-drawer" aria-label="Filter" aria-hidden="true">
+  <div class="drawer__head">
+    <h2 class="drawer__title">Filter</h2>
+    <button class="icon-btn" data-close aria-label="Tutup filter"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="drawer__body">
+    <details class="fgroup" open><summary>Merek <svg class="icon chev" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m6 9 6 6 6-6"/></svg></summary><ul id="f-brand"></ul></details>
+    <details class="fgroup" open><summary>Jenis Mesin <svg class="icon chev" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m6 9 6 6 6-6"/></svg></summary><ul id="f-move"></ul></details>
+    <details class="fgroup"><summary>Ketersediaan <svg class="icon chev" viewBox="0 0 24 24" style="width:16px;height:16px"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <ul><li><label class="check"><input type="checkbox" id="f-sold"><span>Tampilkan jam terjual</span></label></li></ul>
+    </details>
+  </div>
+  <div class="drawer__foot filter-actions">
+    <button class="btn btn--outline" id="f-clear">Hapus</button>
+    <button class="btn btn--gold" data-close id="f-apply">Lihat</button>
+  </div>
+</aside>
+
+<aside class="drawer drawer--right" id="cart-drawer" aria-label="Keranjang" aria-hidden="true">
+  <div class="drawer__head">
+    <h2 class="drawer__title">Keranjang</h2>
+    <button class="icon-btn" data-close aria-label="Tutup keranjang"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="ship"><p id="ship-text"></p><div class="ship__bar"><div class="ship__fill" id="ship-fill"></div></div></div>
+  <div class="drawer__body">
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="upsell"><h4>Tali Jam Saka</h4><div id="upsell"></div></div>
+  </div>
+  <div class="drawer__foot">
+    <div class="subtotal"><span>Subtotal</span><strong id="subtotal">Rp 0</strong></div>
+    <p class="foot-note">Ongkir, pajak, dan kode diskon dihitung saat checkout.</p>
+    <button class="btn btn--gold btn--block" id="checkout">Checkout</button>
+  </div>
+</aside>
+
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Detail produk" aria-hidden="true">
+  <div class="sheet__grab"></div>
+  <button class="icon-btn sheet__close" data-close aria-label="Tutup detail"><svg class="icon" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div class="sheet__body" id="sheet-body"></div>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(() => {
+  /* ---------- Data dummy ---------- */
+  const WA = "6281234567890"; // ganti dengan nomor WhatsApp Rendi
+  const P = [
+    {id:1,b:"Patek Philippe",n:"Patek Philippe 3520 Calatrava Hobnail 1985",y:1985,p:612500000,m:"Manual",s:"round",d:"#EDE6D6",c:"gold",h:"dauphine",idx:"bar",latest:1,size:"32 mm",mat:"Emas kuning 18K"},
+    {id:2,b:"Rolex",n:"Rolex 1601 Datejust Silver Linen 1972",y:1972,p:189000000,m:"Automatic",s:"round",d:"#D9DCDD",c:"steel",h:"baton",idx:"bar",latest:1,size:"36 mm",mat:"Baja & emas putih",date:1},
+    {id:3,b:"Omega",n:"Omega 168.010 Constellation Pie-Pan 1966",y:1966,p:96500000,m:"Automatic",s:"round",d:"#E9E1CF",c:"gold",h:"dauphine",idx:"bar",latest:1,size:"34 mm",mat:"Emas berlapis",pie:1},
+    {id:4,b:"Cartier",n:"Cartier Tank Louis Roman Dial 1978",y:1978,p:248000000,m:"Manual",s:"tank",d:"#F3EFE6",c:"gold",h:"sword",idx:"roman",latest:1,size:"23 × 30 mm",mat:"Emas kuning 18K"},
+    {id:5,b:"Audemars Piguet",n:"Audemars Piguet 5402 Royal Oak Jumbo Blue 1980",y:1980,p:1450000000,m:"Automatic",s:"octagon",d:"#1F3A64",c:"steel",h:"baton",idx:"bar",latest:1,size:"39 mm",mat:"Baja tahan karat",date:1},
+    {id:6,b:"Piaget",n:"Piaget 9811 Tiger Eye Oval 1970s",y:1975,p:214000000,m:"Manual",s:"oval",d:"#8A5A24",c:"gold",h:"none",idx:"none",size:"30 × 25 mm",mat:"Emas kuning 18K"},
+    {id:7,b:"Universal Genève",n:"Universal Genève Polerouter Date Gilt 1962",y:1962,p:58500000,m:"Automatic",s:"round",d:"#F0E9D8",c:"steel",h:"dauphine",idx:"bar",size:"35 mm",mat:"Baja tahan karat",ring:1,date:1},
+    {id:8,b:"Jaeger-LeCoultre",n:"Jaeger-LeCoultre Reverso Classique 1990",y:1990,p:132000000,m:"Manual",s:"rect",d:"#F2EFE8",c:"steel",h:"baton",idx:"arabic",size:"23 × 33 mm",mat:"Baja tahan karat"},
+    {id:9,b:"Omega",n:"Omega 2848 Seamaster Black Gilt 1958",y:1958,p:74500000,m:"Automatic",s:"round",d:"#141414",c:"steel",h:"dauphine",idx:"arabic",size:"34 mm",mat:"Baja tahan karat"},
+    {id:10,b:"Vacheron Constantin",n:"Vacheron Constantin 6351 Patrimony Ultra-Thin 1968",y:1968,p:295000000,m:"Manual",s:"round",d:"#E6DCC6",c:"gold",h:"dauphine",idx:"bar",size:"33 mm",mat:"Emas kuning 18K"},
+    {id:11,b:"Rolex",n:"Rolex 4105 Cellini Rectangle 1985",y:1985,p:118000000,m:"Manual",s:"rect",d:"#0E0E0E",c:"gold",h:"baton",idx:"none",size:"25 × 30 mm",mat:"Emas kuning 18K"},
+    {id:12,b:"IWC",n:"IWC Cal. 89 Sub-Second Gilt 1956",y:1956,p:64000000,m:"Manual",s:"round",d:"#EFE7D3",c:"gold",h:"dauphine",idx:"arabic",size:"35 mm",mat:"Emas 18K",sub:1},
+    {id:13,b:"Patek Philippe",n:"Patek Philippe 3748 Ellipse d'Or Blue 1978",y:1978,p:398000000,m:"Manual",s:"oval",d:"#163866",c:"gold",h:"baton",idx:"none",size:"27 × 32 mm",mat:"Emas kuning 18K"},
+    {id:14,b:"Cartier",n:"Cartier Santos Galbée Two-Tone 1990s",y:1995,p:82000000,m:"Quartz",s:"square",d:"#F4F1EA",c:"two",h:"sword",idx:"roman",size:"29 mm",mat:"Baja & emas"},
+    {id:15,b:"Seiko",n:"Seiko 6139 Pogue Chronograph 1972",y:1972,p:16500000,m:"Automatic",s:"round",d:"#C9A43A",c:"steel",h:"baton",idx:"bar",size:"40 mm",mat:"Baja tahan karat",bezel:1,sub:1},
+    {id:16,b:"Piaget",n:"Piaget Polo Onyx Diamond 1980s",y:1984,p:176000000,m:"Quartz",s:"round",d:"#0B0B0B",c:"gold",h:"baton",idx:"diamond",size:"31 mm",mat:"Emas kuning 18K"},
+    {id:17,b:"Audemars Piguet",n:"Audemars Piguet Ultra-Thin Cushion 1970s",y:1974,p:205000000,m:"Manual",s:"cushion",d:"#E9E2D1",c:"gold",h:"baton",idx:"bar",size:"32 mm",mat:"Emas putih 18K"},
+    {id:18,b:"Omega",n:"Omega De Ville Scallop Lugs 1969",y:1969,p:42000000,m:"Automatic",s:"round",d:"#C7CBCD",c:"steel",h:"baton",idx:"bar",size:"34 mm",mat:"Baja tahan karat",date:1},
+    {id:19,b:"Rolex",n:"Rolex 1002 Oyster Perpetual Silver 1967",y:1967,p:142000000,m:"Automatic",s:"round",d:"#DADDDF",c:"steel",h:"baton",idx:"bar",size:"34 mm",mat:"Baja tahan karat",sold:1},
+    {id:20,b:"Universal Genève",n:"Universal Genève Tri-Compax 1950s",y:1953,p:265000000,m:"Manual",s:"round",d:"#EDE5D2",c:"gold",h:"dauphine",idx:"arabic",size:"35 mm",mat:"Emas 18K",sub:1,sold:1},
+    {id:21,b:"Cartier",n:"Cartier Panthère Vendôme 1990s",y:1993,p:96000000,m:"Quartz",s:"square",d:"#F4F0E6",c:"gold",h:"sword",idx:"roman",size:"27 mm",mat:"Emas kuning 18K",sold:1}
+  ];
+  const STRAPS = [
+    {id:"s1",n:"Tali Kulit Sapi — Cognac",p:1150000,col:"#9A6234"},
+    {id:"s2",n:"Tali Motif Aligator — Hitam",p:1350000,col:"#2A2523"},
+    {id:"s3",n:"Tali Motif Kadal — Cokelat Tua",p:1350000,col:"#5A3A22"}
+  ];
+  const BRANDS_GUIDE = {
+    "Audemars Piguet":"Audemars Piguet vintage adalah barang koleksi sejati yang dikenal karena inovasi dan pengerjaannya. Royal Oak, yang diperkenalkan pada 1972, tetap menjadi salah satu model vintage paling dicari.",
+    "Cartier":"Jam Cartier vintage adalah simbol keanggunan. Model ikonik seperti Tank, Santos, dan Panthère sangat dicari berkat desain klasiknya.",
+    "IWC":"IWC vintage dihargai karena presisi dan daya tahannya. Kaliber 89 menjadi salah satu simbol keunggulan pembuatan jam Swiss abad pertengahan.",
+    "Jaeger-LeCoultre":"Jaeger-LeCoultre dikenal karena inovasi teknisnya. Reverso, yang awalnya dirancang untuk pemain polo pada 1930-an, adalah salah satu jam paling mudah dikenali di dunia.",
+    "Omega":"Omega vintage adalah bukti presisi Swiss dan desain abadi. Constellation dengan dial pie-pan dan Seamaster awal menjadi incaran banyak kolektor.",
+    "Patek Philippe":"Sedikit merek yang memiliki prestise seperti Patek Philippe. Calatrava dan Golden Ellipse adalah model vintage yang mewakili puncak pengerjaan jam Swiss.",
+    "Piaget":"Piaget memadukan kemewahan dan inovasi, terkenal dengan mesin ultra-tipis dan dial batu alam seperti tiger eye dan onyx.",
+    "Rolex":"Rolex vintage termasuk jam yang paling dicari di dunia. Oyster Perpetual, Datejust, dan Cellini dihargai karena sejarah dan nilainya yang bertahan.",
+    "Seiko":"Seiko vintage menawarkan pintu masuk yang terjangkau ke dunia koleksi. Kronograf otomatis 6139 tercatat sebagai salah satu kronograf otomatis pertama di dunia.",
+    "Universal Genève":"Universal Genève dikenal dengan kronograf inovatif seperti Tri-Compax dan Polerouter rancangan Gérald Genta.",
+    "Vacheron Constantin":"Vacheron Constantin mewakili berabad-abad keahlian Swiss. Seri Patrimony vintage dicintai karena kesederhanaan dan ketipisannya."
+  };
+
+  /* ---------- Helpers ---------- */
+  const $ = (s, el=document) => el.querySelector(s);
+  const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+  const rp = n => "Rp " + n.toLocaleString("id-ID");
+  const store = {
+    get(k, f){ try{ const v = localStorage.getItem(k); return v ? JSON.parse(v) : f; }catch(e){ return f; } },
+    set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} }
+  };
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+  /* ---------- Watch illustration (SVG original) ---------- */
+  const METAL = {
+    gold:["#F3D28F","#C9963F","#8E6424"],
+    steel:["#F2F4F5","#AEB6BA","#6C767B"],
+    two:["#E9ECEE","#B9A06A","#7E7360"]
+  };
+  let uid = 0;
+  function watchSVG(w, view="front"){
+    const id = "w" + (++uid);
+    const [m1,m2,m3] = METAL[w.c] || METAL.steel;
+    const dark = isDark(w.d);
+    const ink = dark ? "#EDEDED" : "#1B1B1B";
+    const goldInk = w.c === "gold" ? "#B8862F" : ink;
+    let caseShape = "", dialShape = "", lugs = "", cx = 150, cy = 150;
+    const strap = view === "front"
+      ? `<path d="M118 6h64l-6 74h-52z M124 220h52l6 74h-64z" fill="url(#${id}s)"/>`
+      : `<path d="M118 6h64l-6 74h-52z M124 220h52l6 74h-64z" fill="url(#${id}s)" opacity=".9"/>`;
+    switch(w.s){
+      case "tank": case "rect":
+        caseShape = `<rect x="98" y="72" width="104" height="156" rx="${w.s==="tank"?6:14}" fill="url(#${id}m)"/>`
+          + (w.s==="tank" ? `<rect x="92" y="72" width="14" height="156" rx="5" fill="url(#${id}m)"/><rect x="194" y="72" width="14" height="156" rx="5" fill="url(#${id}m)"/>` : "");
+        dialShape = `<rect x="110" y="86" width="80" height="128" rx="${w.s==="tank"?2:8}" fill="${w.d}"/>`; break;
+      case "square":
+        caseShape = `<rect x="84" y="84" width="132" height="132" rx="18" fill="url(#${id}m)"/><g fill="${m3}" opacity=".7">${[0,1,2,3].map(i=>{const a=[[96,96],[204,96],[96,204],[204,204]][i];return `<circle cx="${a[0]}" cy="${a[1]}" r="3"/>`}).join("")}</g>`;
+        dialShape = `<rect x="104" y="104" width="92" height="92" rx="8" fill="${w.d}"/>`; break;
+      case "octagon":
+        caseShape = `<path d="M150 70l57 23 23 57-23 57-57 23-57-23-23-57 23-57z" fill="url(#${id}m)"/><path d="M150 84l47 19 19 47-19 47-47 19-47-19-19-47 19-47z" fill="${m2}"/>`
+          + [0,1,2,3,4,5,6,7].map(i=>{const a=i*Math.PI/4+Math.PI/8;return `<circle cx="${(150+58*Math.cos(a)).toFixed(1)}" cy="${(150+58*Math.sin(a)).toFixed(1)}" r="3.2" fill="${m1}" stroke="${m3}" stroke-width=".8"/>`}).join("");
+        dialShape = `<circle cx="150" cy="150" r="50" fill="${w.d}"/><g stroke="rgba(255,255,255,.07)" stroke-width="1">${Array.from({length:12},(_,i)=>`<path d="M${100+i*9} 105v90M105 ${100+i*9}h90"/>`).join("")}</g>`; break;
+      case "oval":
+        caseShape = `<ellipse cx="150" cy="150" rx="66" ry="80" fill="url(#${id}m)"/>`;
+        dialShape = `<ellipse cx="150" cy="150" rx="52" ry="65" fill="${w.d}"/>` + (w.d==="#8A5A24" ? `<ellipse cx="150" cy="150" rx="52" ry="65" fill="url(#${id}t)"/>` : ""); break;
+      case "cushion":
+        caseShape = `<rect x="76" y="76" width="148" height="148" rx="46" fill="url(#${id}m)"/>`;
+        dialShape = `<rect x="94" y="94" width="112" height="112" rx="34" fill="${w.d}"/>`; break;
+      default:
+        caseShape = `<circle cx="150" cy="150" r="72" fill="url(#${id}m)"/>` + (w.bezel ? `<circle cx="150" cy="150" r="66" fill="#1B2C3A"/><circle cx="150" cy="150" r="66" fill="none" stroke="#C9A43A" stroke-width="1" stroke-dasharray="1.5 5.4"/>` : "");
+        lugs = `<path d="M108 84l-8-12h22zM192 84l8-12h-22zM108 216l-8 12h22zM192 216l8 12h-22z" fill="${m2}"/>`;
+        dialShape = `<circle cx="150" cy="150" r="${w.bezel?54:60}" fill="${w.d}"/>` + (w.pie ? `<g stroke="rgba(0,0,0,.08)">${Array.from({length:12},(_,i)=>{const a=i*Math.PI/6;return `<path d="M150 150L${(150+60*Math.cos(a)).toFixed(1)} ${(150+60*Math.sin(a)).toFixed(1)}"/>`}).join("")}</g><circle cx="150" cy="150" r="40" fill="${w.d}"/>` : "")
+          + (w.ring ? `<circle cx="150" cy="150" r="52" fill="none" stroke="${ink}" stroke-opacity=".25" stroke-width="7"/>` : "");
+    }
+    // crown
+    const crown = (w.s==="tank"||w.s==="rect") ? `<rect x="${w.s==="tank"?208:202}" y="143" width="9" height="14" rx="2" fill="${m2}"/>` : (w.s==="oval" ? `<rect x="214" y="144" width="8" height="12" rx="2" fill="${m2}"/>` : `<rect x="${w.s==="octagon"?229:222}" y="143" width="10" height="14" rx="2" fill="${m2}"/>`);
+    // indices
+    const rx = (w.s==="tank"||w.s==="rect") ? 32 : (w.s==="oval" ? 42 : (w.s==="square"?38:(w.bezel?44:48)));
+    const ry = (w.s==="tank"||w.s==="rect") ? 54 : (w.s==="oval" ? 54 : rx);
+    let idx = "";
+    const ROM = ["XII","I","II","III","IIII","V","VI","VII","VIII","IX","X","XI"];
+    if (view === "front"){
+      for (let i=0;i<12;i++){
+        const a = i*Math.PI/6 - Math.PI/2, x = 150+rx*Math.cos(a), y = 150+ry*Math.sin(a);
+        if (w.idx==="bar"){ const x2=150+(rx-9)*Math.cos(a), y2=150+(ry-9)*Math.sin(a); idx += `<path d="M${x.toFixed(1)} ${y.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}" stroke="${i%3===0?goldInk:ink}" stroke-width="${i%3===0?3:1.8}" stroke-linecap="round"/>`; }
+        else if (w.idx==="roman"){ idx += `<text x="${x.toFixed(1)}" y="${(y+3.5).toFixed(1)}" font-family="Playfair Display,serif" font-size="${i%3===0?11:8}" fill="${ink}" text-anchor="middle">${ROM[i]}</text>`; }
+        else if (w.idx==="arabic"){ if(i%3===0) idx += `<text x="${x.toFixed(1)}" y="${(y+4).toFixed(1)}" font-family="DM Sans,sans-serif" font-weight="600" font-size="11" fill="${goldInk}" text-anchor="middle">${i===0?12:i}</text>`; else idx += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="1.5" fill="${ink}"/>`; }
+        else if (w.idx==="diamond"){ idx += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${i%3===0?3:2}" fill="#FFFFFF"/><circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${i%3===0?1.4:.9}" fill="#CFE6FF"/>`; }
+      }
+      if (w.sub) idx += `<circle cx="150" cy="180" r="13" fill="none" stroke="${ink}" stroke-opacity=".5"/><path d="M150 180l0-9" stroke="${ink}" stroke-width="1.2"/>`;
+      if (w.date) idx += `<rect x="${150+rx-24}" y="144" width="15" height="12" fill="#FFF" stroke="${ink}" stroke-opacity=".3"/><text x="${150+rx-16.5}" y="153.5" font-size="8" font-family="DM Sans,sans-serif" text-anchor="middle" fill="#111">12</text>`;
+    }
+    // hands
+    const handCol = dark ? "#F5F5F5" : (w.c==="gold" ? "#7A5A1E" : "#222");
+    let hands = "";
+    if (view === "front"){
+      const hL = Math.min(rx,ry)*0.62, mL = Math.min(rx,ry)*0.88;
+      const hr = w.h==="sword" ? `<path d="M150 150l-3 0 3 -${hL} 3 ${hL}z" fill="${handCol}" transform="rotate(-50 150 150)"/><path d="M150 150l-2.4 0 2.4 -${mL} 2.4 ${mL}z" fill="${handCol}" transform="rotate(62 150 150)"/>`
+        : w.h==="dauphine" ? `<path d="M150 150l-4 -6 4 -${hL} 4 ${hL-6}z" fill="${handCol}" transform="rotate(-50 150 150)"/><path d="M150 150l-3 -6 3 -${mL} 3 ${mL-6}z" fill="${handCol}" transform="rotate(62 150 150)"/>`
+        : `<rect x="148.5" y="${150-hL}" width="3" height="${hL}" rx="1.5" fill="${handCol}" transform="rotate(-50 150 150)"/><rect x="149" y="${150-mL}" width="2" height="${mL}" rx="1" fill="${handCol}" transform="rotate(62 150 150)"/>`;
+      hands = hr + `<path d="M150 ${150+12}V${150-mL+4}" stroke="${w.c==="gold"?"#B8862F":"#C0392B"}" stroke-width=".9" transform="rotate(150 150 150)"/><circle cx="150" cy="150" r="3.2" fill="${handCol}"/>`;
+    }
+    const logo = view === "front" && w.s !== "octagon" ? `<text x="150" y="${(w.s==="tank"||w.s==="rect")?(w.idx==="roman"?132:116):126}" font-family="Playfair Display,serif" font-size="7.5" letter-spacing="1.2" fill="${ink}" fill-opacity=".85" text-anchor="middle">${esc(w.b.split(" ")[0].toUpperCase())}</text>` : "";
+    const glare = `<path d="M110 100 Q150 80 190 100 L180 112 Q150 96 120 112z" fill="#FFF" opacity=".10"/>`;
+    const back = view === "back";
+    const tilt = back ? `transform="rotate(-12 150 150) translate(0 4)"` : "";
+    const caseback = back ? `<g opacity=".95"><circle cx="150" cy="150" r="${w.s==="tank"||w.s==="rect"?40:46}" fill="none" stroke="${m3}" stroke-opacity=".5"/><text x="150" y="146" font-size="8" font-family="DM Sans,sans-serif" letter-spacing="1.5" fill="${m3}" text-anchor="middle">${esc(w.b.toUpperCase().slice(0,16))}</text><text x="150" y="160" font-size="7" font-family="DM Sans,sans-serif" letter-spacing="1" fill="${m3}" text-anchor="middle">SWISS · ${w.y}</text></g>` : "";
+    return `<svg viewBox="0 0 300 300" role="img" aria-label="${esc(w.n)}">
+      <defs>
+        <linearGradient id="${id}m" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${m1}"/><stop offset=".55" stop-color="${m2}"/><stop offset="1" stop-color="${m3}"/></linearGradient>
+        <linearGradient id="${id}s" x1="0" x2="1"><stop offset="0" stop-color="#3B2416"/><stop offset=".5" stop-color="#5C3A23"/><stop offset="1" stop-color="#352013"/></linearGradient>
+        <radialGradient id="${id}t" cx=".4" cy=".4" r=".8"><stop offset="0" stop-color="#D9A24A" stop-opacity=".55"/><stop offset=".5" stop-color="#6A3E12" stop-opacity=".2"/><stop offset="1" stop-color="#2A1606" stop-opacity=".6"/></radialGradient>
+        <filter id="${id}f" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#000" flood-opacity=".45"/></filter>
+      </defs>
+      <g ${tilt}>
+        ${strap}
+        <g filter="url(#${id}f)">${lugs}${caseShape}${crown}</g>
+        ${back ? `<g>${caseShape.replace(/url\(#\w+m\)/g, m2)}</g>${caseback}` : dialShape + idx + logo + hands + glare}
+      </g>
+    </svg>`;
+  }
+  function isDark(hex){
+    const n = parseInt(hex.slice(1),16), r=n>>16, g=n>>8&255, b=n&255;
+    return (0.299*r + 0.587*g + 0.114*b) < 128;
+  }
+  function strapSVG(col){
+    return `<svg viewBox="0 0 60 60"><rect x="6" y="24" width="48" height="12" rx="3" fill="${col}"/><path d="M8 26h44M8 34h44" stroke="#E7A65B" stroke-width=".6" stroke-dasharray="2 2" opacity=".7"/><rect x="40" y="22" width="8" height="16" rx="1.5" fill="none" stroke="#E7A65B" stroke-width="1.2"/></svg>`;
+  }
+
+  /* ---------- State ---------- */
+  const state = {
+    brands: new Set(), moves: new Set(), showSold: false, q: "", sort: "latest",
+    wish: new Set(store.get("saka_wish", [])), wishOnly: false,
+    cart: store.get("saka_cart", [])
+  };
+
+  /* ---------- Filters ---------- */
+  function buildFilters(){
+    const avail = P.filter(p => !p.sold);
+    const count = (k, v) => avail.filter(p => p[k] === v).length;
+    const brands = [...new Set(P.map(p => p.b))].sort();
+    $("#f-brand").innerHTML = brands.map((b,i) => `<li><label class="check"><input type="checkbox" value="${esc(b)}" data-f="b"><span>${esc(b)}</span><em>${count("b", b)}</em></label></li>`).join("");
+    $("#f-move").innerHTML = ["Automatic","Manual","Quartz"].map(m => `<li><label class="check"><input type="checkbox" value="${m}" data-f="m"><span>${{Automatic:"Otomatis",Manual:"Manual",Quartz:"Quartz"}[m]}</span><em>${count("m", m)}</em></label></li>`).join("");
+  }
+  document.addEventListener("change", e => {
+    const t = e.target;
+    if (t.dataset.f === "b"){ t.checked ? state.brands.add(t.value) : state.brands.delete(t.value); render(); }
+    if (t.dataset.f === "m"){ t.checked ? state.moves.add(t.value) : state.moves.delete(t.value); render(); }
+    if (t.id === "f-sold"){ state.showSold = t.checked; render(); }
+    if (t.id === "sort"){ state.sort = t.value; $("#sort-label").textContent = t.options[t.selectedIndex].text.split(",")[0]; render(); }
+  });
+  $("#f-clear").addEventListener("click", () => { state.brands.clear(); state.moves.clear(); state.showSold=false; state.wishOnly=false; $$("#filter-drawer input").forEach(i => i.checked=false); render(); });
+
+  /* ---------- Render grid ---------- */
+  function filtered(){
+    let list = P.filter(p => (state.showSold || !p.sold)
+      && (!state.brands.size || state.brands.has(p.b))
+      && (!state.moves.size || state.moves.has(p.m))
+      && (!state.wishOnly || state.wish.has(p.id))
+      && (!state.q || (p.n + " " + p.y).toLowerCase().includes(state.q)));
+    const by = {
+      "latest": (a,b) => (b.latest||0)-(a.latest||0) || a.id-b.id,
+      "price-desc": (a,b) => b.p-a.p,
+      "price-asc": (a,b) => a.p-b.p,
+      "year-asc": (a,b) => a.y-b.y
+    }[state.sort];
+    return list.sort((a,b) => (a.sold||0)-(b.sold||0) || by(a,b));
+  }
+  function render(){
+    const list = filtered();
+    const grid = $("#grid");
+    grid.innerHTML = list.length ? list.map(card).join("") : `<div class="empty-state"><p>Tidak ada jam yang cocok dengan filter ini.</p><button class="btn btn--outline" id="reset-inline">Hapus Filter</button></div>`;
+    $("#result-count").textContent = `${list.length} jam`;
+    const n = state.brands.size + state.moves.size + (state.showSold?1:0) + (state.wishOnly?1:0);
+    const fn = $("#filter-n"); fn.hidden = !n; fn.textContent = n;
+    // chips
+    const chips = [...state.brands].map(v => ({t:v, k:"b", v})).concat([...state.moves].map(v => ({t:{Automatic:"Otomatis",Manual:"Manual",Quartz:"Quartz"}[v], k:"m", v})));
+    if (state.showSold) chips.push({t:"Termasuk terjual", k:"sold"});
+    if (state.wishOnly) chips.push({t:"Wishlist saja", k:"wish"});
+    if (state.q) chips.push({t:`“${state.q}”`, k:"q"});
+    $("#chips").innerHTML = chips.map(c => `<button class="chip" data-chip="${c.k}" data-v="${esc(c.v||"")}">${esc(c.t)} <span aria-hidden="true">×</span></button>`).join("");
+    bindSliders();
+  }
+  function card(p){
+    const wished = state.wish.has(p.id);
+    const badge = p.sold ? `<span class="badge badge--sold">Terjual</span>` : (p.latest ? `<span class="badge">Terbaru</span>` : "");
+    return `<article class="card${p.sold?" is-sold":""}">
+      <div class="card__media">
+        ${badge}
+        <button class="wish" data-wish="${p.id}" aria-pressed="${wished}" aria-label="${wished?"Hapus dari":"Simpan ke"} wishlist"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-9.2-8.6C1.3 8.5 3 5 6.4 5c2 0 3.3 1.1 4.1 2.3h3c.8-1.2 2.1-2.3 4.1-2.3C21 5 22.7 8.5 21.2 11.4 19 15.6 12 20 12 20Z" transform="translate(0 -1)"/></svg></button>
+        <div class="card__slider" data-slider>
+          <div class="card__slide">${watchSVG(p,"front")}</div>
+          <div class="card__slide">${watchSVG(p,"back")}</div>
+        </div>
+        <div class="card__dots"><i class="on"></i><i></i></div>
+      </div>
+      <div class="card__info">
+        <h2 class="card__title">${esc(p.n)}</h2>
+        <div class="card__price">${rp(p.p)}</div>
+      </div>
+      <a href="#" class="card__link" data-qv="${p.id}" aria-label="Lihat ${esc(p.n)}"></a>
+    </article>`;
+  }
+  function bindSliders(){
+    $$("[data-slider]").forEach(sl => {
+      const dots = $$(".card__dots i", sl.parentElement);
+      sl.addEventListener("scroll", () => {
+        const i = Math.round(sl.scrollLeft / sl.clientWidth);
+        dots.forEach((d,k) => d.classList.toggle("on", k===i));
+      }, {passive:true});
+    });
+  }
+
+  /* ---------- Clicks ---------- */
+  document.addEventListener("click", e => {
+    const w = e.target.closest("[data-wish]");
+    if (w){ e.preventDefault(); const id=+w.dataset.wish; state.wish.has(id)?state.wish.delete(id):state.wish.add(id); store.set("saka_wish",[...state.wish]); w.setAttribute("aria-pressed", state.wish.has(id)); updateWish(); toast(state.wish.has(id)?"Disimpan ke wishlist":"Dihapus dari wishlist"); if(state.wishOnly) render(); return; }
+    const q = e.target.closest("[data-qv]");
+    if (q){ e.preventDefault(); openQV(+q.dataset.qv); return; }
+    const c = e.target.closest("[data-chip]");
+    if (c){ const k=c.dataset.chip, v=c.dataset.v;
+      if(k==="b"){state.brands.delete(v);} if(k==="m"){state.moves.delete(v);} if(k==="sold"){state.showSold=false;$("#f-sold").checked=false;} if(k==="wish"){state.wishOnly=false;} if(k==="q"){state.q="";$("#q").value="";}
+      $$(`#filter-drawer input[value="${CSS.escape(v||"")}"]`).forEach(i=>i.checked=false); render(); return; }
+    if (e.target.id === "reset-inline"){ $("#f-clear").click(); return; }
+    const add = e.target.closest("[data-add]");
+    if (add){ addToCart(add.dataset.add); return; }
+    const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]"), rm = e.target.closest("[data-rm]");
+    if (inc||dec||rm){ const key=(inc||dec||rm).dataset.inc||(inc||dec||rm).dataset.dec||(inc||dec||rm).dataset.rm; const it=state.cart.find(x=>x.k===key); if(!it) return;
+      if(inc && it.k.startsWith("s")) it.q++; if(dec) it.q--; if(rm||it.q<1) state.cart=state.cart.filter(x=>x!==it); saveCart(); return; }
+    const op = e.target.closest("[data-open]");
+    if (op){ e.preventDefault(); openDrawer(op.dataset.open); return; }
+    if (e.target.closest("[data-close]") || e.target.id === "scrim"){ closeAll(); }
+  });
+
+  /* ---------- Drawers ---------- */
+  const DR = {menu:"#menu-drawer", filter:"#filter-drawer", cart:"#cart-drawer"};
+  let lastFocus = null;
+  function openDrawer(name){
+    closeAll(true); lastFocus = document.activeElement;
+    const d = $(DR[name]); d.classList.add("is-open"); d.setAttribute("aria-hidden","false");
+    $("#scrim").classList.add("is-open"); document.body.classList.add("locked");
+    if (name==="cart") renderCart();
+    setTimeout(() => { const f = d.querySelector("button,a,input"); f && f.focus({preventScroll:true}); }, 60);
+  }
+  function closeAll(silent){
+    $$(".drawer.is-open,.sheet.is-open").forEach(d => { d.classList.remove("is-open"); d.setAttribute("aria-hidden","true"); });
+    $("#scrim").classList.remove("is-open"); document.body.classList.remove("locked");
+    if (!silent && lastFocus) lastFocus.focus({preventScroll:true});
+  }
+  document.addEventListener("keydown", e => { if (e.key === "Escape"){ closeAll(); closeSearch(); } });
+
+  /* ---------- Quick view ---------- */
+  function openQV(id){
+    const p = P.find(x => x.id === id);
+    const msg = encodeURIComponent(`Halo Saka Timepiece, saya tertarik dengan ${p.n} (${rp(p.p)}). Apakah masih tersedia?`);
+    $("#sheet-body").innerHTML = `<div class="qv">
+      <div class="qv__media">${watchSVG(p,"front")}</div>
+      <div class="qv__info">
+        <p class="eyebrow">${esc(p.b)}</p>
+        <h2>${esc(p.n)}</h2>
+        <p class="qv__price">${p.sold ? `<s style="color:var(--text-3)">${rp(p.p)}</s> · Terjual` : rp(p.p)}</p>
+        <table class="specs">
+          <tr><th>Merek</th><td>${esc(p.b)}</td></tr>
+          <tr><th>Tahun</th><td>${p.y}</td></tr>
+          <tr><th>Mesin</th><td>${{Automatic:"Otomatis",Manual:"Manual (hand-wound)",Quartz:"Quartz"}[p.m]}</td></tr>
+          <tr><th>Ukuran case</th><td>${esc(p.size)}</td></tr>
+          <tr><th>Material</th><td>${esc(p.mat)}</td></tr>
+          <tr><th>Kelengkapan</th><td>Jam saja, kotak Saka Timepiece</td></tr>
+          <tr><th>Kondisi</th><td>Sangat baik, sudah diservis</td></tr>
+        </table>
+        <div class="qv__actions">
+          ${p.sold ? `<a class="btn btn--outline btn--block" href="#newsletter" data-close>Kabari Saya Jika Ada yang Serupa</a>`
+            : `<button class="btn btn--gold btn--block" data-add="w${p.id}">Tambah ke Keranjang</button>
+               <a class="btn btn--outline btn--block" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">Tanya via WhatsApp</a>`}
+        </div>
+        <p class="qv__note">Garansi mekanis · Pengiriman berasuransi · Keaslian terverifikasi</p>
+      </div></div>`;
+    closeAll(true); lastFocus = document.activeElement;
+    const s = $("#sheet"); s.classList.add("is-open"); s.setAttribute("aria-hidden","false");
+    $("#scrim").classList.add("is-open"); document.body.classList.add("locked");
+    $(".sheet__body").scrollTop = 0;
+  }
+  // swipe down to close sheet (mobile)
+  (() => { const s=$("#sheet"); let y0=null, dy=0;
+    s.addEventListener("touchstart", e => { if ($(".sheet__body").scrollTop>0) return; y0=e.touches[0].clientY; dy=0; s.style.transition="none"; }, {passive:true});
+    s.addEventListener("touchmove", e => { if (y0===null) return; dy=Math.max(0,e.touches[0].clientY-y0); if (innerWidth<900) s.style.transform=`translateY(${dy}px)`; }, {passive:true});
+    s.addEventListener("touchend", () => { s.style.transition=""; s.style.transform=""; if (y0!==null && dy>110) closeAll(); y0=null; });
+  })();
+
+  /* ---------- Cart ---------- */
+  const FREE = 5000000;
+  function itemInfo(k){
+    if (k.startsWith("s")){ const s = STRAPS.find(x => x.id===k); return {n:s.n, p:s.p, img:strapSVG(s.col)}; }
+    const p = P.find(x => "w"+x.id === k); return {n:p.n, p:p.p, img:watchSVG(p,"front")};
+  }
+  function addToCart(k){
+    const it = state.cart.find(x => x.k===k);
+    if (it){ if (k.startsWith("w")){ toast("Jam ini sudah ada di keranjang — stok hanya 1"); openDrawer("cart"); return; } it.q++; }
+    else state.cart.push({k, q:1});
+    saveCart(); openDrawer("cart"); toast("Ditambahkan ke keranjang");
+  }
+  function saveCart(){ store.set("saka_cart", state.cart); renderCart(); }
+  function renderCart(){
+    const ul = $("#cart-items");
+    let sum = 0, qty = 0;
+    ul.innerHTML = state.cart.length ? state.cart.map(it => { const i = itemInfo(it.k); sum += i.p*it.q; qty += it.q;
+      return `<li class="cart-item"><div class="cart-item__img">${i.img}</div><div><p class="cart-item__name">${esc(i.n)}</p><div class="cart-item__price">${rp(i.p)}</div>
+        <div class="qty"><button data-dec="${it.k}" aria-label="Kurangi">−</button><span>${it.q}</span><button data-inc="${it.k}" aria-label="Tambah" ${it.k.startsWith("w")?"disabled style='opacity:.35'":""}>+</button></div></div>
+        <button class="remove" data-rm="${it.k}">Hapus</button></li>`; }).join("")
+      : `<li class="cart-empty"><h3>Keranjang masih kosong</h3><p>Temukan jam vintage pilihan di koleksi kami.</p><a href="#koleksi" class="btn btn--outline" data-close>Lihat Koleksi</a></li>`;
+    $("#subtotal").textContent = rp(sum);
+    const left = FREE - sum;
+    $("#ship-text").innerHTML = left > 0 ? `Belanja <strong>${rp(left)}</strong> lagi untuk gratis pengiriman express berasuransi.` : `<strong>Pesanan Anda mendapat gratis pengiriman express berasuransi.</strong>`;
+    $("#ship-fill").style.width = Math.min(100, sum/FREE*100) + "%";
+    $("#upsell").innerHTML = STRAPS.map(s => `<div class="upsell__item"><div class="thumb">${strapSVG(s.col)}</div><div><p>${esc(s.n)}</p><small>${rp(s.p)}</small></div><button class="add-mini" data-add="${s.id}">Tambah</button></div>`).join("");
+    const cc = $("#cart-count"); cc.hidden = !qty; cc.textContent = qty;
+  }
+  $("#checkout").addEventListener("click", () => {
+    if (!state.cart.length){ toast("Keranjang masih kosong"); return; }
+    const lines = state.cart.map(it => { const i=itemInfo(it.k); return `- ${i.n} x${it.q} (${rp(i.p*it.q)})`; }).join("\n");
+    const total = state.cart.reduce((s,it)=>s+itemInfo(it.k).p*it.q,0);
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent("Halo Saka Timepiece, saya ingin memesan:\n"+lines+"\nTotal: "+rp(total))}`, "_blank", "noopener");
+  });
+
+  /* ---------- Wishlist ---------- */
+  function updateWish(){ const n = state.wish.size, el = $("#wish-count"); el.hidden = !n; el.textContent = n; }
+  $("#wish-toggle").addEventListener("click", () => {
+    if (!state.wish.size){ toast("Wishlist masih kosong — ketuk ikon hati pada jam"); return; }
+    state.wishOnly = !state.wishOnly; render(); $("#koleksi").scrollIntoView({behavior:"smooth"});
+    toast(state.wishOnly ? "Menampilkan wishlist" : "Menampilkan semua jam");
+  });
+
+  /* ---------- Search ---------- */
+  const sBox = $("#search"), sIn = $("#q");
+  function closeSearch(){ sBox.classList.remove("is-open"); $("#search-toggle").setAttribute("aria-expanded","false"); }
+  $("#search-toggle").addEventListener("click", () => { const open = !sBox.classList.contains("is-open"); sBox.classList.toggle("is-open", open); $("#search-toggle").setAttribute("aria-expanded", open); if (open) setTimeout(()=>sIn.focus(),50); });
+  $("#search-close").addEventListener("click", closeSearch);
+  sIn.addEventListener("input", () => { state.q = sIn.value.trim().toLowerCase(); render(); const n = filtered().length; $("#search-hint").textContent = state.q ? `${n} jam cocok dengan “${sIn.value.trim()}”.` : "Ketik untuk menyaring koleksi secara langsung."; });
+  sIn.addEventListener("keydown", e => { if (e.key==="Enter"){ e.preventDefault(); closeSearch(); sIn.blur(); $("#koleksi").scrollIntoView({behavior:"smooth"}); } });
+
+  /* ---------- Misc ---------- */
+  $("#show-sold").addEventListener("click", () => { state.showSold = true; $("#f-sold").checked = true; render(); $("#koleksi").scrollIntoView({behavior:"smooth"}); toast("Jam terjual ditampilkan di koleksi"); });
+  $("#sell-link").addEventListener("click", e => { e.preventDefault(); window.open(`https://wa.me/${WA}?text=${encodeURIComponent("Halo Saka Timepiece, saya ingin menawarkan jam vintage saya.")}`, "_blank", "noopener"); });
+  $("#nl-form").addEventListener("submit", e => { e.preventDefault(); const v = $("#nl-email").value.trim(); const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); $("#nl-msg").textContent = ok ? "Terima kasih! Anda akan menerima kabar rilis Kamis berikutnya." : "Mohon masukkan alamat email yang valid."; $("#nl-msg").style.color = ok ? "var(--lime)" : "var(--gold)"; if (ok) e.target.reset(); });
+  $("#guide").innerHTML = Object.entries(BRANDS_GUIDE).map(([b,t]) => `<details class="acc"><summary>${esc(b)}<span class="plus" aria-hidden="true"></span></summary><p>${esc(t)}</p></details>`).join("");
+  $("#yr").textContent = new Date().getFullYear();
+  (() => { const d = new Date(), add = (4 - d.getDay() + 7) % 7 || 7; d.setDate(d.getDate() + add); $("#next-drop").textContent = d.toLocaleDateString("id-ID",{weekday:"long", day:"numeric", month:"long"}); })();
+  let tt; function toast(m){ const t=$("#toast"); t.textContent=m; t.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove("show"),2200); }
+
+  buildFilters(); render(); renderCart(); updateWish();
+})();
+</script>
+</body>
+</html>
